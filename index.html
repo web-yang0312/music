@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" href="css/music.css" />
+		<link rel="stylesheet" href="" />
+		<script type="text/javascript" src="js/jquery.js">
+			
+		</script>
+		<script type="text/javascript" src="js/music.js">
+			
+		</script>
+		<title></title>
+	</head>
+	<body>
+		<div id="header">
+			<div class="goback"></div>
+			<div class="menu"></div>
+		</div>
+		<h1 class="sings1">尘埃</h1>
+		<h2 class="singer1">歌手:徐魏洲</h2>
+		<div class="geshou">
+			<div class="circle">
+				<div class="touxiang"></div>
+			</div>
+		</div>
+		<div class="bofang">
+			<div id='play'></div>
+			<div class="prev"></div>	
+			<div class="next"></div>
+		</div>
+		<div class="jindu">
+			<div id="current-time">0:00</div>
+			<div id="duration">2:49</div>	
+			<div id="progress"> <div id="p-i"></div></div>
+		</div>
+		<div class="anniu">
+			<div class="anniiu1"><div class="xunhuan"></div></div>
+			<div class="anniiu1"><div class="laba"></div></div>
+			<div class="anniiu1"><div class="like"><img src="img/xin.png" alt="" / class="xin"></div></div>
+			<div class="anniiu1"><div class="jia"></div></div>
+			
+		</div>
+		<div class="kang">
+			<div class="mute"></div>
+			<div id="volume"><div id='v-i'></div></div>
+		</div>
+		<div class="bofaliebiao">
+			<div class="zhezhao">
+				<div class="hui"></div>
+				<h1>播放列表 </h1>
+				<ul id="lists">
+					
+				</ul>
+			</div>
+		</div>
+		<div class="tianjialiebiao">
+			<div class="zhezhao">
+				<div class="down"></div>
+				<h1>添加列表 </h1>
+				 <div class="listss">
+                     <div id="lists-list" data-v='{"name":"我希望 ","author":"杨玏 ","src":"yl/xiwang.mp3","tu":"img/74.jpg"}'>
+                     	<span class="sings">我希望</span>
+                     	<span class="singer">杨玏</span>
+                     </div>
+                     <div id="lists-list" data-v='{"name":"惊鸿一面","author":"许嵩 ","src":"yl/jinghong.mp3","tu":"img/15.jpg"}'>
+                     	<span class="sings">惊鸿一面</span>
+                     	<span class="singer">许嵩</span>
+                     </div>
+                     <div id="lists-list" data-v='{"name":"演员","author":"薛之谦 ","src":"yl/yanyuan.mp3","tu":"img/7.jpg"}'>
+                     	<span class="sings">演员</span>
+                     	<span class="singer">薛之谦</span>
+                     </div>
+                </div>
+			</div>
+		</div>
+		<audio src="yl/你还要我怎样.mp3" id="audio" ></audio>
+	</body>
+</html>

@@ -1,0 +1,376 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-weight: normal;
+    box-sizing: border-box;
+}
+$d-list:320px,375px,412px,414px;
+html{
+    font-size: 100px;
+}
+body{
+    font-size: 15px;
+    position: relative;
+    background: url(../img/1.jpeg) fixed;
+    overflow: hidden;
+}
+a{
+    text-decoration: none;
+}
+$design-size:750px;
+@each $i in $d-list{
+    @media screen and (min-width:#{$i}){
+        html{
+            font-size:100px * $i/$design-size;
+        }
+    }
+}
+@mixin top-bottom{
+    position: absolute;
+    top:0;
+    bottom:0;
+    margin: auto;
+}
+@mixin rl{
+    position: absolute;
+    left:0;
+    right:0;
+    margin: auto;
+}
+@mixin juzhong{
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin: auto;
+}
+#header{
+    width: 100%;
+    height: 1.2rem;
+    position: relative;
+    .goback{
+        width: 0.7rem;
+        height:0.7rem;
+        @include top-bottom;
+        left:0.3rem;
+        background: url(../img/back.png); 
+        background-size: cover;
+    }
+    .menu{
+        width: 0.72rem;
+        height:0.72rem;
+        @include top-bottom;
+        right:0.3rem;
+        background: url(../img/list.png); 
+        background-size: cover;
+    }
+}
+h1{
+    width: 100%;
+    text-align: center;
+    height: 0.8rem;
+    line-height:0.8rem;
+    color: #FFFFFF;
+}
+h2{
+    width: 100%;
+    text-align: center;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    color: #FFFFFF;
+}
+.geshou{
+    position: relative;
+    height: 6rem;
+    margin-top:0.2rem;
+    .circle{
+        padding: 0.2rem;
+        width:6rem;
+        height:6rem;
+        border-radius: 50%;
+//      background: #52B990;
+        background: repeating-linear-gradient(to bottom,#7ec3a5,#ae52b9);
+        @include rl;
+        .touxiang{
+            width: 100%;
+            height:100%;
+            border-radius: 50%;
+            background: url(../img/h.jpeg);
+            background-size: cover;
+        }
+    }
+}
+.bofang{
+    height:1.2rem;
+    width: 100%;
+    position: relative;
+    margin-top:0.5rem;
+    #play{
+        @include rl;
+        width: 1.2rem;
+        height:1.2rem;
+        background: url(../img/play.png);
+        background-size: cover;
+    }
+    .prev{
+        width: 0.8rem;
+        height:0.8rem;
+        @include top-bottom;
+        left:1.5rem;
+        background: url(../img/prev.png); 
+        background-size: cover;
+    }
+    .next{
+        width: 0.8rem;
+        height:0.8rem;
+        @include top-bottom;
+        right:1.5rem;
+        background: url(../img/next.png); 
+        background-size: cover;
+    }
+}
+.jindu{
+    margin-top:0.2rem;
+    height: 1rem;
+    width: 100%;
+    position: relative;
+    font-family: "微软雅黑";
+    #current-time{
+        @include top-bottom;
+        left:0.5rem;
+        font-size: 0.26rem;
+        color: #FFFFFF;
+        line-height: 1rem;
+        font-weight: 100;
+    }
+    #duration{
+        @include top-bottom;
+        right:0.5rem;
+        font-size: 0.26rem;
+        color: #FFFFFF;
+        line-height: 1rem;
+        font-weight: 100;
+    }
+    #progress{
+        @include juzhong;
+        height:2px;
+        background: #e4d0d0;
+        width: 5rem;
+        #p-i{
+            width:0.1rem;
+            height:0.1rem;
+            background: rgb(7, 245, 247);
+            @include top-bottom;
+            border-radius: 50%;
+            left:-0.1rem;
+            box-shadow: -3px 0 5px rgba(7,245,247,0.5);
+        }
+   }
+}
+.anniu{
+    position: relative;
+    width: 100%;
+    height:1.5rem;
+    .anniiu1{
+        height: 100%;
+        width:25%;
+        position: relative;
+        float: left;
+        .xunhuan{
+          height: 0.6rem;
+          width: 0.6rem; 
+          @include juzhong;
+          background: url(../img/xunhuan4-1.png);
+          background-size: cover;
+        }
+        .laba{
+          height: 0.7rem;
+          width: 0.7rem; 
+          @include juzhong;
+          background: url(../img/laba.png);
+          background-size: cover;
+        }
+        .like{
+          height: 0.6rem;
+          width: 0.6rem; 
+          @include juzhong;
+          background: url(../img/2.png);
+          background-size: cover;
+          .xin{
+              width: 0.6rem;
+              height: 0.6rem;
+              @include juzhong;
+              transform: rotatey(90deg);
+              transition: all 0.5s;
+          }
+        }
+        .jia{
+          height: 0.65rem;
+          width: 0.65rem; 
+          @include juzhong;
+          background: url(../img/3.png);
+          background-size: cover;
+        }
+    }
+    
+}
+.kang{
+    width: 100%;
+    height: 1rem;
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    top:2.5rem;
+    left:0;
+    transform: scale(0);
+    transition: all 0.5s;
+    .mute{
+        width: 0.6rem;
+        height: 0.6rem;
+        background: url(../img/jingyin.png);
+        background-size: cover;
+        @include top-bottom;
+        left:0.3rem;
+    }
+    #volume{
+        @include juzhong;
+        height:2px;
+        background: #e4d0d0;
+        width: 5rem;
+        #v-i{
+            width:0.1rem;
+            height:0.1rem;
+            background: rgb(7, 245, 247);
+            @include top-bottom;
+            border-radius: 50%;
+            left:5rem;
+            box-shadow: -3px 0 5px rgba(7,245,247,0.5); 
+        }
+    }
+}
+.active5{
+    transform: scale(1);
+}
+.anniu .anniu1 .like .active4{
+    transform: rotatey(0deg);
+}
+.bofaliebiao{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left:100%;
+    display: none;
+    background: url(../img/5.jpg);
+    transition: all 0.5s;
+    .zhezhao{
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.3);
+        .hui{
+        position: absolute;
+        width: 0.72rem;
+        height:0.72rem;
+        top:0.3rem;
+        right:0.3rem;
+        background: url(../img/x.png); 
+        background-size: cover;}
+        h1{
+        padding: 0.2rem;
+        font-size: 30px;
+        height: 1rem;
+        }
+        li{
+            height: 1.2rem;
+            width: 100%;
+            border-bottom: 1px solid #ffffff;
+            padding-left: 20px;
+            color: #FFFFFF;
+            position: relative;
+            span{
+                display: block;
+            }
+            .sings{
+                height: 0.65rem;
+                font-size: 22px;
+                padding-top: 3px;
+                line-height: 0.65rem;
+                font-weight: 600;
+            }
+             .singer{
+                height: 0.55rem;                
+                font-size: 16px;
+                line-height: 0.55rem;
+            }
+            .delete{
+                height: 0.5rem;
+                width: 0.5rem;
+                background: url(../img/shanchu.png);
+                background-size: cover;
+                @include top-bottom;
+                right:0.5rem;
+                z-index: 20;
+            }
+        }
+    } 
+}
+.active2{
+    display: block;
+    left:0;
+}
+.active{
+    background: rgba(0,0,0,0.3);
+}
+.tianjialiebiao{
+    height: 70%;
+    width: 100%;
+    position: absolute;
+    bottom:-100%;
+    left:0;
+    background: url(../img/13.jpg);
+    background-size: cover;
+    transition: all 0.5s linear;
+    .zhezhao{
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.3);
+        .down{
+        position: absolute;
+        width: 0.5rem;
+        height:0.5rem;
+        top:0.3rem;
+        right:0.3rem;
+        background: url(../img/down.png); 
+        background-size: cover;
+        }
+        h1{
+        padding: 0.2rem;
+        font-size: 30px;
+        height: 1rem;
+        }
+        #lists-list{
+            height: 1rem;
+            width: 100%;
+            border-bottom: 1px solid #ffffff;
+            padding-left: 20px;
+            line-height: 1rem;
+            color: #FFFFFF;
+            position: relative;
+            .sings{
+                font-size: 22px;
+                padding-top: 3px;
+                font-weight: 600;
+            }
+             .singer{
+                float: right;
+                margin-right: 0.5rem;               
+                font-size: 16px;
+            }
+
+        }
+    } 
+}
+.active3{
+    bottom: 0;
+}
